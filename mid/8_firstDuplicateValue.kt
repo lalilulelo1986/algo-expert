@@ -9,21 +9,15 @@ fun main() {
     print("Result: $result")
 }
 
+/*
+    if visited we mark index by multiply by -1
+*/
+// O(n) time | O(1) space
 fun firstDuplicateValue(array: MutableList<Int>): Int {
     // Write your code here.
     for (i in array.indices) {
-        if (array[i] == -2) return i + 1
-        if (array[i] == array[array[i] - 1]) array[array[i] - 1] = -2
-
-        if (i != array[i]) {
-            if (array[i] == array[array[i]]) {
-                return array[i]
-            } else {
-                val tmp = array[i]
-                array[i] = array[array[i]]
-                array[array[i]] = tmp
-            }
-        }
+        if (array[Math.abs(array[i]) - 1] < 0) return Math.abs(array[i])
+        else array[Math.abs(array[i]) - 1] = -1 * array[Math.abs(array[i]) - 1]
     }
 
     return -1
