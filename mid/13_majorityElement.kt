@@ -5,10 +5,30 @@ fun main(args: Array<String>) {
     // assert(3 == majorityElement(mutableListOf(3, 3, 1)))
     // assert(2 == majorityElement(mutableListOf(1, 2, 2, 2, 1)))
     // assert(2 == majorityElement(mutableListOf(1, 2, 3, 2, 3, 2, 2, 4, 2)))
-    assert(2 == majorityElement(mutableListOf(1, 1, 1, 1, 2, 2, 2, 2, 2)))
+    // assert(2 == majorityElement(mutableListOf(1, 1, 1, 1, 2, 2, 2, 2, 2)))
+    println(majorityElement(mutableListOf(1, 1, 1, 1, 9, 9, 9, 9, 9)))
 }
 
 fun majorityElement(array: MutableList<Int>): Int {
+    var answer = 0
+
+    for (curBit in 0..31) {
+        val curValBit: Int = 1 shl curBit
+        var onesCount: Int = 0
+
+        for (num in array) {
+            if ((num and curValBit) != 0) onesCount++
+        }
+
+        if (onesCount > array.size / 2) {
+            answer += curValBit
+        }
+    }
+
+    return answer
+}
+
+fun majorityElement2(array: MutableList<Int>): Int {
     var majority = array[0]
     var counter = 1
     for (i in 1..array.size - 1) {
@@ -27,7 +47,7 @@ fun majorityElement(array: MutableList<Int>): Int {
     return majority
 }
 
-fun majorityElement2(array: MutableList<Int>): Int {
+fun majorityElement3(array: MutableList<Int>): Int {
     // Write your code here.
     var start = 0
     var end = array.size - 1
