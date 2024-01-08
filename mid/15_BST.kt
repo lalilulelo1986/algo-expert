@@ -1,4 +1,4 @@
-package com.algoexpert.program
+package com.algoexpert.program.bst
 
 import java.util.Stack
 
