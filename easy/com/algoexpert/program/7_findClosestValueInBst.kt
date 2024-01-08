@@ -1,10 +1,10 @@
 package com.algoexpert.program
 
-open class BST(value: Int) {
-    var value = value
-    var left: BST? = null
-    var right: BST? = null
-}
+// open class BST(value: Int) {
+//     var value = value
+//     var left: BST? = null
+//     var right: BST? = null
+// }
 
 fun findClosestValueInBst1(tree: BST, target: Int): Int {
     // Write your code here.
