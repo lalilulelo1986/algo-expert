@@ -1,4 +1,4 @@
-package com.algoexpert.program
+package com.algoexpert.program.m18
 
 open class BST(value: Int) {
     var value = value
@@ -21,6 +21,11 @@ open class BST(value: Int) {
         }
     }
 }
+
+/*
+    input -> sorted list
+    todo -> just create BST from this array
+*/
 
 fun main() {
     minHeightBst(listOf(1, 2, 3, 4, 5))
