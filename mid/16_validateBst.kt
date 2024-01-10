@@ -1,5 +1,7 @@
 package com.algoexpert.program
 
+import com.algoexpert.program.bst.BST
+
 // open class BST(value: Int) {
 //     var value = value
 //     var left: BST? = null
